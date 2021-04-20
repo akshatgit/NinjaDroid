@@ -118,7 +118,7 @@ class ApkParser:
                 try:
                     if AndroidManifestParser.looks_like_manifest(filename):
                         self.logger.debug("%s looks like an AndroidManifest.xml file", filename)
-                        manifest = self.manifest_parser.parse(entry_filepath, True, filepath, extended_processing)
+                        manifest = self.manifest_parser.parse(entry_filepath, True, filepath, True)
                     elif CertParser.looks_like_cert(filename):
                         self.logger.debug("%s looks like a CERT file", filename)
                         cert = self.__parse_cert(entry_filepath, filename, extended_processing)
